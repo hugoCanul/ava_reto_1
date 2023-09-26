@@ -31,7 +31,7 @@ Se espera tener lo siguiente en cuestión de modelado de base de datos.
 | 3   | Leer un libro     | Novela de ciencia   | No         |
 
 ## GIT
-Todos los puntos anteriores deberian irse subiendo progresivamente en commits, si subes todo tú código de un tirón se te restarán puntos.
+Todos los puntos anteriores deberian irse subiendo progresivamente en commits, si subes todo tú código de un tirón se te restarán puntos, deberas realizar un fork a este repositorio, hacerlo publico y compartir el enlace del repositorio a este correo: mcanul@avantronics.com.mx con el asunto: PP | Nombre Apellido
 
 
 ## Funcionalidades Adicionales (Puntos Extra)
