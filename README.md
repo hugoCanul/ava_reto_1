@@ -42,11 +42,11 @@ Puedes considerar la implementación de las siguientes funcionalidades opcionale
 - Implementar filtros y búsqueda de tareas.
 - Agregar autenticación de usuario más avanzada, como roles y permisos.
 
-Este reto proporciona una oportunidad para demostrar tus habilidades en el desarrollo web full-stack. Asegúrate de tener en cuenta los requisitos y las funcionalidades opcionales para construir una aplicación funcional y eficiente.
+Este reto proporciona una oportunidad para demostrar tus habilidades en el desarrollo web. Asegúrate de tener en cuenta los requisitos y las funcionalidades opcionales para construir una aplicación funcional y eficiente.
 
 # Notas
 
-Puedes usar algún start kit de laravel con vue (INERTIA) o hacerlo de cero. Lo que esta estrictamente prohibido es usar codigo de otros repositorios o otros autores en esta prueba.
+Esta estrictamente prohibido es usar codigo de otros repositorios u otros autores en esta prueba.
 
 
 ¡Buena suerte, disfruta del desafío y que la fuerza te acompañe!
