@@ -1,4 +1,4 @@
-# Reto de Desarrollador Full-Stack con Laravel y Vue.js
+# Reto de Desarrollador Web con Laravel y Vue.js
 
 El objetivo de este reto es que el candidato demuestre sus habilidades en el desarrollo de una aplicación web completa utilizando Laravel como backend y Vue.js como frontend. La aplicación será una sencilla aplicación de gestión de tareas, que permitirá a los usuarios crear, ver, actualizar y eliminar tareas.
 
