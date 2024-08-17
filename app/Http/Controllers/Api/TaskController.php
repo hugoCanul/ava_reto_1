@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helpers\ResponseHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Task;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class TaskController extends Controller
      //Obtener las tareas
     public function index()
     {
-        return response()->json(Task::all(),200);
+        $task = Task::all();
+        return ResponseHelper::success($task, 'Task retrieved succesfully');
     }
 
     /**
@@ -31,6 +33,13 @@ class TaskController extends Controller
             'description'=> 'nullable|string',
             'status'=> 'required|in::peding, in-progress,completed',
         ]);
+
+        try{
+            $task = Task::create($validated);
+            return ResponseHelper::success($task, 'Task created successfully', 201);
+        }catch(\Exception $e){
+            return ResponseHelper::error('Error creating task', $e->getMessage(), 500);
+        }
     }
 
     /**
@@ -40,9 +49,9 @@ class TaskController extends Controller
     {
         $task =Task::find($id);
         if($task){
-            return response()->json($task,200);
+            return ResponseHelper::success($task, 'Task retrieved succesfully', 200);
         }
-        return response()->json(['message'=>'Task not found'],404);
+        return ResponseHelper::error('Task not found', null, 404);
     }
 
     /**
@@ -53,15 +62,21 @@ class TaskController extends Controller
     {
         $task= Task::find($id);
         if(!$task){
-            return response()->json(['message'=>'Task not found'],404);
+            return ResponseHelper::success('Task not found', null, 400);
         }
         $validated = $request ->validate([
             'title'=> 'required|string|max:255',
             'description'=> 'nullable|string',
             'status'=> 'required|in::peding, in-progress,completed',
         ]);
-        $task->update($validated);
-        return response()->json($task,200);
+
+        try{
+            $task->update($validated);
+            return ResponseHelper::success('Task updated successfully');
+        }catch(\Exception $e){
+            return ResponseHelper::error('Error updating task', $e->getMessage(), 500);
+        }
+        
     }
 
     /**
@@ -73,8 +88,8 @@ class TaskController extends Controller
         $task=Task::find($id);
         if($task){
             $task->delete();
-            return response()->json(['message'=>'Task deleted'],200);
+            return ResponseHelper::success(null, 'Task deleted successfully');
         }
-        return response ()->json(['message'=> 'Task not found'],404);
+        return ResponseHelper::error('Task not found', null, 404);
     }
 }
